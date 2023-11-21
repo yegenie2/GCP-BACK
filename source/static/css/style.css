@@ -1,3 +1,6 @@
+h1 {
+    margin-top: 30px;
+}
 .container .row .upload-box {
     width: calc(50% - 15px);
     box-sizing: border-box;
@@ -9,13 +12,14 @@
 }
 
 .container .row .upload-box .drag-file{
-    width: 100%;
+    width: 80%;
     height: 360px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 3px dashed #dbdbdb;
+    margin-bottom: 20px;
 }
 .container .row .upload-box .drag-file.highlight {
     border: 3px dashed red;
@@ -23,10 +27,92 @@
 .container .row .upload-box .drag-file .image {
     width: 40px;
 }
+.container .row .upload-box .drag-file .select_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .container .row .upload-box .drag-file .message {
     margin-bottom: 0;
 }
 
+
+/* detail 부분 정리*/
+.container .row .files {
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    overflow: auto;
+    height: 100%;
+}
+
+.container .row .files .file {
+    display: flex;
+    padding: 20px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.container .row .files .file:last-child {
+    margin-bottom: 0px;
+    border-bottom: none;
+}
+.container .row .files .file .thumbnail {
+    display: flex;
+    flex: none;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    /* margin-right: 20px; */
+    align-items: center;
+
+}
+.container .row .files .file .thumbnail .image {
+    width: 100%;
+}
+.container .row .files .file .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .row .files .file .details .header {
+    display: flex;
+}
+.container .row .files .file .details .header .name {
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.container .row .files .file .details .header .size {
+    margin-left: auto;
+}
+
+.container .row .files .file .progress {
+    position: relative;
+    height: 6px;
+    background-color: #dbdbdb;
+    overflow: hidden;
+    margin-top: 4px;
+    border-radius: 10px;
+}
+.container .row .files .file .progress .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #5b975b;
+}
+
+.container .row .files .file .status {
+    display: flex;
+    width: 100%;
+}
+
+.container .row .files .file .status .speed {
+    margin-left: auto;
+}
+
+/* 모바일 화면 처리 */
 @media(max-width: 700px) {
     .container .row .upload-box {
       width: 100%;
@@ -34,7 +120,13 @@
       margin-right: 0;
     }
     .container .row .upload-box .drag-file {
-      height: 150px;
+      height: 250px;
+    }
+    .container .row .files {
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0;
+        overflow: initial;
     }
 
 

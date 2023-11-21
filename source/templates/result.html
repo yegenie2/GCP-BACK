@@ -11,13 +11,11 @@
 <body>
     <!-- header -->
     {% include 'nav.html' %}
-
-
     <!-- content start -->
-    <h1 align="center">Flask File Uploads Tutorial</h1>
+    <h1 align="center">Result</h1>
     <div class="container">
         <div class="row">
-            <h2>Select a file to upload</h2>
+            <h2>Result</h2>
             <p>
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -29,33 +27,66 @@
                     {% endif %}
                 {% endwith %}
             </p>
-<!-- 테스트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 시작~~~  -->
-
-
-<!-- 테스트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
             <div class="upload-box">
-
                 <div id="drop-file" class="drag-file">
-                  <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-                  <p class="message">Drag files to upload</p>
                 {% if filename == filename %}
-                    <img src="{{ url_for('display_image', filename=filename) }}" >
+                    <img class="select_img" src="{{ url_for('display_image', filename=filename) }}" >
                 {% endif %}
                 </div>
-
-<!-- 테스트 끝!!!!!!!!!!!!!!!!!!! -->
                 <form method="post" action="/" enctype="multipart/form-data">
                     <dl>
-                        <p>
-                            <input type="file" name="file" class="form-control" autocomplete="off" required>
-                        </p>
+<!--                        <p>-->
+<!--                            <input type="file" name="file" class="form-control" autocomplete="off" required>-->
+<!--                        </p>-->
                     </dl>
                     <p>
-                        <input type="submit" value="Submit" class="btn btn-info">
+                        <input type="submit" value="Back" class="btn btn-info">
                     </p>
                 </form>
             </div>
+            <!-- image 부분 끝 -->
+
+            <!-- 결과 도출 리스트 -->
+            <div id="files" class="files">
+                <div class="file">
+                    <div class="thumbnail">
+                        <img src="https://w7.pngwing.com/pngs/572/676/png-transparent-logo-brand-adidas-performance-angle-text-trademark.png" alt="파일타입 이미지" class="image">
+                    </div>
+                    <div class="details">
+                        <header class="header">
+                            <span class="name">브랜드명</span>
+                        </header>
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                        <div class="status">
+                            <span class="percent">유사도</span>
+                            <span class="speed">99.9%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- list 2 -->
+                <div class="file">
+                    <div class="thumbnail">
+                        <img src="https://w7.pngwing.com/pngs/572/676/png-transparent-logo-brand-adidas-performance-angle-text-trademark.png" alt="파일타입 이미지" class="image">
+                    </div>
+                    <div class="details">
+                        <header class="header">
+                            <span class="name">브랜드명</span>
+                        </header>
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                        <div class="status">
+                            <span class="percent">유사도</span>
+                            <span class="speed">99.9%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 유사도 리스트 end-->
+
         </div>
     </div>
 </body>
