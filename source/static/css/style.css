@@ -21,7 +21,7 @@ h1 {
     border: 3px dashed #dbdbdb;
     margin-bottom: 20px;
 }
-.container .row .upload-box .drag-file.highlight {
+.container .row .upload-box .drag-file.hover {
     border: 3px dashed red;
 }
 .container .row .upload-box .drag-file .image {
@@ -34,6 +34,18 @@ h1 {
 }
 .container .row .upload-box .drag-file .message {
     margin-bottom: 0;
+}
+
+.container .row .upload-box .restart{
+    margin-top: 30px;
+    background-color: rgb(239, 190, 31);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 65%;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 

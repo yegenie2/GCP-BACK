@@ -50,5 +50,35 @@
         </div>
     </div>
 <!-- 전체 컨테이너 끝 -->
+<script>
+    const droparea = document.querySelector(".drag-file");
+
+    droparea.addEventListener("dragover",(e)=> {
+      e.preventDefault();
+        droparea.classList.add("hover");
+    });
+
+    droparea.addEventListener("dragleave", ()=> {
+        droparea.classList.remove("hover");
+    });
+
+    droparea.addEventListener("drop", (e) => {
+        e.preventDefault();
+
+        const file = e.dataTransfer.files;
+
+
+        const type = file.type;
+        console.log(file);
+        if(type=="file/png" || type=="file/jpg" || type=="file/jpeg"){
+
+            return upload(file);
+
+
+        }
+    });
+
+
+</script>
 </body>
 </html>

@@ -16,35 +16,18 @@
     <div class="container">
         <div class="row">
             <h2>Result</h2>
-            <p>
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <ul>
-                        {% for message in messages %}
-                            <li>{{ message }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% endwith %}
-            </p>
 
             <div class="upload-box">
                 <div id="drop-file" class="drag-file">
-                {% if filename == filename %}
-                    <img class="select_img" src="{{ url_for('display_image', filename=filename) }}" >
-
+                {% if filename %}
+                    <img class="select_img" src="{{ url_for('static', filename='uploads/' + filename) }}" >
+<!--                    <p>Filename: {{ filename }}</p>-->
+                {% else %}
+                    <p>No image uploaded</p>
                 {% endif %}
                 </div>
-                <form method="post" action="/" enctype="multipart/form-data">
-                    <dl>
-<!--                        <p>-->
-<!--                            <input type="file" name="file" class="form-control" autocomplete="off" required>-->
-<!--                        </p>-->
-                    </dl>
-                    <p>
-                        <input type="submit" value="Back" class="btn btn-info">
-                    </p>
-                </form>
+                <a class="restart" href="{{ url_for('index') }}">Back to Home</a>
+
             </div>
             <!-- image 부분 끝 -->
 
